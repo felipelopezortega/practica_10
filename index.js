@@ -5,9 +5,17 @@ var port = process.env.PORT || 3000; //setteamos el puerto para que escuche al s
 
 //primera ruta (está al nivel de la raíz/), Hello World!
 
-app.get("/", function(req, resp){
+app.get("/", function(req, res){
 
-    resp.send("<html><head></head><body><h1>Hello World!</h1></body></html>")
+    res.send("<html><head></head><body><h1>Hello World!</h1></body></html>")
 });
 
 app.listen(port) //levantar el server y ponerlo a la escucha
+
+//segunda ruta /api, regresa un objeto JSON
+
+app.get("/api", function(req, res){
+
+    res.json({ fisrtname: "John", lastname: "Doe" });
+
+});
