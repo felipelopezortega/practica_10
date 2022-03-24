@@ -19,3 +19,9 @@ app.get("/api", function(req, res){
     res.json({ fisrtname: "John", lastname: "Doe" });
 
 });
+
+//tercera ruta, recibe un parámetro
+app.get("/person/:id", function(req, res){
+
+    res.send("<html><head></head><body><h1>Person:" + req.params.id + "</h1></body></html>");
+});
